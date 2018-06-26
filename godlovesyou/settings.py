@@ -77,16 +77,6 @@ WSGI_APPLICATION = 'godlovesyou.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'prequest',
-#         'USER': 'postgres',
-#         'PASSWORD': 'moses111',
-#         'HOST':'.herokuapp.com',
-#         'PORT':'5432',
-#     }
-# }
 
 DATABASES = { 'default': dj_database_url.config() }
 

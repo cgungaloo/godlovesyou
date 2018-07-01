@@ -1,11 +1,36 @@
-<div>
-    <h1><a href="/">Prayer Requests</a></h1>
-</div>
+{% load staticfiles %}
+<html>
+	<head>
+		<div>
+			<title>Prayer Requests</title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+			<link rel="stylesheet" href="{% static 'css/godlovesyouapp.css' %}">
+			<link href='https://fonts.googleapis.com/css?family=Meera Inimai' rel='stylesheet'>
+			<link href='https://fonts.googleapis.com/css?family=Monda' rel='stylesheet'>
+		</div>
+	</head>
+	<body>
+		<div class='page-header'>
+    		<h1><a href="/">Prayer Requests</a></h1>
+		</div>
 
-{% for pr in prs %}
-	<div>
-		<p>published: {{ pr.published_date }}</p>
-		<h1><a href="">{{ pr.title }}</a></h1>
-		<p>{{ pr.text|linebreaksbr }}</p>
-	</div>
-{% endfor %}
+		<div class='content container'>
+			<div class='row'>
+				<div class="col-md-8">
+					{% for pr in prs %}
+						<div class='post'>
+							<div class='pub_date'>
+								<p>published: {{ pr.published_date }}</p>
+							</div>
+							<h1><a href="">{{ pr.title }}</a></h1>
+							<p>{{ pr.text|linebreaksbr }}</p>
+						</div>
+					{% endfor %}
+				</div>	
+			</div>
+		</div>
+
+	</body>
+
+</html>

@@ -1,11 +1,11 @@
 {% extends 'godlovesyouapp/base.html' %}
 {% block content %}
 	{% for pr in prs %}
-	<div class='post'>
+	<div class='pr'>
 		<div class='pub_date'>
 			<p>published: {{ pr.published_date }}</p>
 		</div>
-		<h1><a href="">{{ pr.title }}</a></h1>
+		<h1><a href="{% url 'prayer_request_detail' pk=pr.pk %}">{{ pr.title }}</a></h1>
 		<p>{{ pr.text|linebreaksbr }}</p>
 	</div>
 	{% endfor %}
